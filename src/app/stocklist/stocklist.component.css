@@ -1,0 +1,39 @@
+button{
+    width:150px;
+    height:40px;
+    border-radius: 3px;
+    background-color: cornflowerblue;
+    color:#fff !important;
+    border:1px solid #fff;
+}
+
+.row{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.selected{
+    background-color: cornflowerblue;
+    color:#fff;
+}
+
+.set_button{
+    background-color: maroon;
+    color:#fff;
+    
+}
+
+.set_input{
+    height:40px;
+    padding:5px;
+    border:1px solid #000;
+    width:100%;
+}
+.set_input:invalid{
+    
+    border:1px solid #cc0000;
+}
+
+.error{
+    color:#cc0000;
+}

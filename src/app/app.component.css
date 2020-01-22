@@ -1,0 +1,13 @@
+.main{
+    color:#fff;
+    background-color: cornflowerblue;
+    padding: 30px;
+}
+
+.main a{
+    color : #fff;
+}
+
+.main a:visited{
+    color : #fff;
+}

@@ -1,0 +1,93 @@
+
+
+<div class="container"><div class="row"><div class="offset-md-3 col-md-4">
+  <input class="set_input" type="number" required="" (input)="inputValue=$event.target.value" placeholder="5 //stock refresh frequency in seconds"> 
+  </div>
+  <div class="col-md-2">
+  <button class="set_button" (click)="intervalSetter()">SET</button>
+  </div></div></div>
+
+<h2 class="text-center" style="color:cornflowerblue;margin-top:30px">List of stocks</h2>
+
+
+
+
+<div class="container">
+  <div class="row text-center">
+    <div class="offset-md-2 col-md-4">
+        <button (click)="buyStock()">Buy</button>
+    </div>
+    <div class="col-md-4">
+        <button (click)="sellStock()">Sell</button>
+    </div>
+  </div>
+    <div class="row ">
+      <div class=" col-md-12 text-center">
+        <p class="error" *ngIf="buyerror">You have insufficient balance to buy the selected stock[s]!</p>
+        <p class="error" *ngIf="sellerror">You have insufficient amount of stock[s] to sell!</p>
+        <p class="error" *ngIf="emptyError">Please select atleast one stock!</p>
+      </div>
+      
+  </div>
+</div>
+
+
+<div class="container"><div class="row"><div class="col-md-12">
+
+    <table class="table table-bordered" *ngIf="stocks.data.length">
+        <th>
+          Stock ID
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+            Indicator
+          </th>
+        <tr id="{{s.id}}" (click)="onSelect(s.id)" *ngFor="let s of stocks.data" [class.selected]="setClass(s.id)">
+         
+          <td>
+            {{s.id}}
+          </td>
+        
+          <td>
+            {{s.name}}
+          </td>
+          <td>
+            {{s.price}}
+          </td>
+          <td>
+            <img style="width:30px;" src="{{s.indicatorURL}}">
+          </td>
+        </tr>
+        </table>
+</div></div></div>
+
+
+    
+
+
+   <!--   <div>
+
+   <div *ngIf="stocks.data.length">
+    <button (click)="buyStock()">Buy</button>
+    <p *ngIf="buyerror">You have insufficient balance to buy the selected stock[s]!</p>
+    <ul>
+    <li *ngFor="let s of stocks.data">
+       <div (click)="onSelect(s.id)">
+       <p>ID: {{s.id}}</p> 
+       <p>Name: {{s.name}}</p>
+       <p>Price: {{s.price}}</p>
+        <div><img style="width:30px;" src="{{s.indicatorURL}}"></div>
+       
+       <button (click)="sellStock(s.id)">Sell</button>
+    
+    </div>
+    </li>
+</ul>
+    </div>
+    
+</div>   -->
